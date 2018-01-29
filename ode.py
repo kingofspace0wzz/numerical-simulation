@@ -8,6 +8,10 @@ def forward_euler(f, a, b, y0, h):
 
     Args:
       f: f = y'
+      a: start point
+      b: end point
+      y0: initial condition
+      h: step size
     '''
 
     n = (int)((b-a)/h + 1)
@@ -147,4 +151,4 @@ def test3():
     plt.show()
 
 if __name__ == '__main__':
-    test3()
+    test2()
