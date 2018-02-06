@@ -150,5 +150,10 @@ def test3():
 
     plt.show()
 
+def test4():
+    t, y = forward_euler([lambda t, y: -100*y], 0, 1/100, [1], 1/70)
+    plt.plot(t,y[0])
+    plt.show()
+
 if __name__ == '__main__':
-    test2()
+    test4()
