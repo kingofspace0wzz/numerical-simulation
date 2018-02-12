@@ -151,9 +151,28 @@ def test3():
     plt.show()
 
 def test4():
-    t, y = forward_euler([lambda t, y: -100*(y - np.sin(t)) + np.cos(t)], 0.7, 1, [2], 0.01)
-    plt.plot(t,y[0])
+    t, y = forward_euler([lambda t, y1: -y1, lambda t, y2:-100*(y2 - np.sin(t)) + np.cos(t)], 
+                          0, 1, [1, 2], 0.01)
+
+    plt.figure(1)
+    plt.subplot(211)
+    plt.plot(t, y[0])
+    plt.subplot(212)
+    plt.plot(t, y[1])
+
     plt.show()
+
+# def test5():
+#     t, y = forward_euler([lambda t, y1, y2: 0.25*y1 - 0.01*y1*y2, lambda t, y1, y2:-y2 + 0.01*y1*y2],
+#                          0, 100, [10, 10], 0.01)
+
+#     plt.figure(1)
+#     plt.subplot(211)
+#     plt.plot(t, y[0])
+#     plt.subplot(212)
+#     plt.plot(t, y[1])
+
+#     plt.show()
 
 if __name__ == '__main__':
     test4()
