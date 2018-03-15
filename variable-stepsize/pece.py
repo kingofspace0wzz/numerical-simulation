@@ -312,7 +312,7 @@ def pece3(a, b, y0, h, tol=10**(-3), frac=0.9):
                     # estimate of LTE
                     lte = 1/6*la.norm(old_predictor - y_temp)
                     r = frac * tol/(h*lte)
-                    print(r)
+
                     print(h)
                     r = np.power(r, 1/3)
 
@@ -360,7 +360,7 @@ def test1():
     plt.show()
 
 def test2():
-    y, t,_ = pece2(0, 100, [10, 10], .05)
+    y, t,_ = pece2(0, 100, [10, 10], .1)
 
     plt.figure(1)
     plt.subplot(3,1,1)
@@ -372,7 +372,7 @@ def test2():
     plt.show()
 
 def test3():
-    y, t,_ = pece3(0, 11, [2, 0], .01)
+    y, t,_ = pece3(0, 11, [2, 0], .05)
 
     plt.figure(1)
     plt.subplot(2,1,1)
@@ -382,4 +382,4 @@ def test3():
     plt.show()
 
 if __name__ == '__main__':
-    test3()
+    test1()
